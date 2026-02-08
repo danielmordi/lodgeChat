@@ -1,5 +1,5 @@
 #!/bin/bash
-composer install --no-dev --optimize-autoloader
+composer update
 php artisan config:cache
 npm install
 npm run build
