@@ -4,8 +4,9 @@
     "builder": "RAILPACK"
   },
   "deploy": {
-    "startCommand": "php artisan migrate --force && php artisan serve --host 0.0.0.0 --port $PORT",
-    "healthcheckPath": "/",
-    "healthcheckTimeout": 300
+    "runtimeConfig": {
+      "PHP_VERSION": "8.3"
+    },
+    "startCommand": "php artisan migrate --force && frankenphp run --config /Caddyfile"
   }
 }
